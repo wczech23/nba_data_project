@@ -13,6 +13,8 @@ for file in coaching_data_filepath.iterdir():
             filepath = f"{str(coaching_data_filepath)}/{filename}"
             excel_file = excel_file[0] # modifying format of file to fit csv
             excel_file.columns = [' '.join(col).strip() for col in excel_file.columns.values]
+            excel_file = excel_file.dropna(axis=1, how="all")
+            excel_file = excel_file.fillna(value=0)
             excel_file.to_csv(filepath, index=False)
 
 
