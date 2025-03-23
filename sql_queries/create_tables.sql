@@ -4,7 +4,7 @@ CREATE TABLE wczech_2.dbo.player_salaries (
 	Year VARCHAR(100)
 );
 
-CREATE TABLE wczech_2.dbo.nba_player_advstats (
+CREATE TABLE wczech_2.dbo.player_stats (
     Rk INT,
     Player VARCHAR(50),
     Age INT,
@@ -53,15 +53,16 @@ CREATE TABLE wczech_2.dbo.coach_stats (
     RS_Career_W INT,
     RS_Career_L INT,
     RS_Career_WP DECIMAL(5, 3),
-    PF_G INT,
-    PF_W INT,
-    PF_L INT,
-    PF_Franchise_G INT,
-    PF_Franchise_W INT,
-    PF_Franchise_L INT,
-    PF_Career_G INT,
-    PF_Career_W INT,
-    PF_Career_L INT
+    PF_G VARCHAR(5),
+    PF_W VARCHAR(5),
+    PF_L VARCHAR(5),
+    PF_Franchise_G VARCHAR(5),
+    PF_Franchise_W VARCHAR(5),
+    PF_Franchise_L VARCHAR(5),
+    PF_Career_G VARCHAR(5),
+    PF_Career_W VARCHAR(5),
+    PF_Career_L VARCHAR(5),
+	Yr VARCHAR(4)
 );
 
 CREATE TABLE wczech_2.dbo.team_stats (
@@ -79,14 +80,6 @@ CREATE TABLE wczech_2.dbo.team_stats (
     Division_P VARCHAR(10),
     Division_SW VARCHAR(10),
     All_Star_Pre VARCHAR(10),
-    All_Star_Post VARCHAR(10),
-    Margin_Less_Than_3 VARCHAR(10),
-    Margin_Greater_Than_10 VARCHAR(10),
-    Month_Nov VARCHAR(10),
-    Month_Dec VARCHAR(10),
-    Month_Jan VARCHAR(10),
-    Month_Feb VARCHAR(10),
-    Month_Mar VARCHAR(10),
-    Month_Apr VARCHAR(10)
+	Yr VARCHAR(4)
 );
 

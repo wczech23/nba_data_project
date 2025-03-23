@@ -13,6 +13,7 @@ for file in coaching_data_filepath.iterdir():
             filepath = f"{str(coaching_data_filepath)}/{filename}"
             excel_file = excel_file[0] # modifying format of file to fit csv
             excel_file.columns = [' '.join(col).strip() for col in excel_file.columns.values]
+            excel_file['Year'] = filename.split("_")[0]
             excel_file = excel_file.dropna(axis=1, how="all")
             excel_file = excel_file.fillna(value=0)
             excel_file.to_csv(filepath, index=False)
@@ -28,6 +29,10 @@ for file in team_data_filepath.iterdir():
             excel_file.columns = [' '.join(col).strip() for col in excel_file.columns.values]
             filename = str(file).split("/")[1].split(".")[0]
             filepath = f"{str(team_data_filepath)}/{filename}"
+            excel_file = excel_file.iloc[:,:14]
+            excel_file['Year'] = filename.split("_")[0]
+            excel_file = excel_file.dropna(axis=1, how="all")
+            excel_file = excel_file.fillna(value=0)
             excel_file.to_csv(filepath, index=False)
 
 # converting player data to csv
